@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',function(){var links=document.querySelectorAll('a[data-pixel-event]');links.forEach(function(a){a.addEventListener('click',function(){var ev=a.getAttribute('data-pixel-event');var plan=a.getAttribute('data-plan');try{if(typeof fbq==='function'&&ev){fbq('track',ev,plan?{plan:plan}:{})}}catch(e){}},{passive:true});});});
