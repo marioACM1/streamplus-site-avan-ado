@@ -207,6 +207,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const countdownEl = document.getElementById('promo-countdown');
+    if (!countdownEl) return;
+    const key = 'promoCountdownStart';
+    let start = parseInt(localStorage.getItem(key) || '0', 10);
+    if (!start || isNaN(start)) { start = Date.now(); localStorage.setItem(key, String(start)); }
+    const duration = 24 * 60 * 60 * 1000;
+    const tick = () => {
+        const now = Date.now();
+        const remaining = Math.max(0, duration - (now - start));
+        const h = String(Math.floor(remaining / 3600000)).padStart(2, '0');
+        const m = String(Math.floor((remaining % 3600000) / 60000)).padStart(2, '0');
+        const s = String(Math.floor((remaining % 60000) / 1000)).padStart(2, '0');
+        countdownEl.textContent = `${h}:${m}:${s}`;
+        requestAnimationFrame(tick);
+    };
+    tick();
+});
+
 // Enhanced Confetti Effect
 function createConfetti() {
     const colors = ['#7c3aed', '#a78bfa', '#ffffff', '#ffd700', '#9333ea'];
