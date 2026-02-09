@@ -225,25 +225,6 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     tick();
 });
-document.addEventListener('DOMContentLoaded', function() {
-    const el = document.getElementById('referral-countdown');
-    if (!el) return;
-    const key = 'referralCountdownStart';
-    let start = parseInt(localStorage.getItem(key) || '0', 10);
-    if (!start || isNaN(start)) { start = Date.now(); localStorage.setItem(key, String(start)); }
-    const duration = 7 * 24 * 60 * 60 * 1000;
-    const tick = () => {
-        const now = Date.now();
-        const remaining = Math.max(0, duration - (now - start));
-        const d = String(Math.floor(remaining / 86400000)).padStart(2, '0');
-        const h = String(Math.floor((remaining % 86400000) / 3600000)).padStart(2, '0');
-        const m = String(Math.floor((remaining % 3600000) / 60000)).padStart(2, '0');
-        const s = String(Math.floor((remaining % 60000) / 1000)).padStart(2, '0');
-        el.textContent = `${d}:${h}:${m}:${s}`;
-        requestAnimationFrame(tick);
-    };
-    tick();
-});
 
 // Enhanced Confetti Effect
 function createConfetti() {
