@@ -1931,3 +1931,153 @@ html {
         min-width: auto;
     }
 }
+.referral {
+    position: relative;
+    padding: 80px 0;
+}
+.referral-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(1200px 400px at 20% 10%, rgba(255, 215, 0, 0.2), transparent), radial-gradient(1200px 400px at 80% 90%, rgba(138, 43, 226, 0.15), transparent);
+    pointer-events: none;
+}
+.referral-banner {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: center;
+    gap: 24px;
+    background: linear-gradient(135deg, #ffed4e 0%, #ffd700 50%, #ff9f1c 100%);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+.referral-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.1);
+    font-size: 56px;
+    color: #000;
+}
+.referral-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #000;
+}
+.referral-subtitle {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: rgba(0,0,0,0.85);
+}
+.referral-urgency {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+}
+.referral-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.12);
+    font-weight: 800;
+    color: #000;
+}
+.referral-countdown {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    color: #000;
+}
+.referral-cta {
+    margin-top: 12px;
+    background: #111827;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    font-weight: 800;
+}
+.referral-explain {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+}
+.referral-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 16px;
+}
+.referral-item-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.15);
+    color: #fff;
+    font-size: 20px;
+}
+.referral-item-text {
+    font-weight: 700;
+}
+.referral-testimonials {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+.testimonial-card {
+    padding: 16px;
+}
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+.testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111827;
+    color: #fff;
+    font-weight: 900;
+}
+.testimonial-name {
+    font-weight: 800;
+}
+.testimonial-city {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+.testimonial-text {
+    font-weight: 600;
+}
+@media (max-width: 1024px) {
+    .referral-banner {
+        grid-template-columns: 1fr;
+    }
+    .referral-icon {
+        width: 100%;
+    }
+    .referral-explain {
+        grid-template-columns: 1fr;
+    }
+    .referral-testimonials {
+        grid-template-columns: 1fr;
+    }
+}
